@@ -114,7 +114,10 @@ Search results      #Keyword-driven
 *** Keywords ***
 
 Search results
+    [Documentation]     Applying Data-driven test to search result
+    [Tags]  DDT
     [Arguments]     ${search}
+    
     search.search something    ${search}
     search.search result should contains predictions
     search.click on the first prediction
