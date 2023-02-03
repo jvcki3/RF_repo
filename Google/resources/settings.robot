@@ -15,7 +15,8 @@ search result
 
     Wait Until Page Contains Element    //div[@id='srhSec']
     Click Element    //div[@id='ssc']//child::span[@role='checkbox']    #safe search
-    Click Element    //div[@class="URIeEf" and @id='B9FV7d']//span[text()='เปิด']   #continuous scrolling
+    #Click Element    //div[@class="URIeEf" and @id='B9FV7d']//span[text()='เปิด']   #continuous scrolling
+    Mouse Down       //*[@class='slmarker']    #search result perpage, 20
     Click Element    //div[@class="URIeEf" and @id='Z7WJjd']//span[text()='อย่าแสดงการค้นหายอดนิยม']    #not showing popular search
     Click Element    //div[@class="URIeEf"]//span[text()='เปิดผลการค้นหาที่เลือกแต่ละรายการในหน้าต่างเบราว์เซอร์ใหม่']
     Execute Javascript      window.scrollTo(0, document.body.scrollHeight)

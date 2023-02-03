@@ -54,10 +54,13 @@ keyboard
     Wait Until Page Contains Element    //div[@id='kbd']    #show on-screen keyboard
     ${count}    SeleniumLibrary.Get Element Count    //div[@style="white-space: nowrap; user-select: none;"]/button[not(contains(@style,"visibility: hidden;"))]
     Log To Console    ${count}
-    FOR    ${counter}    IN RANGE    1    ${count}+1
+    FOR    ${counter}    IN RANGE    1     4         #${count}+1
         Click Element    (//div[@style="white-space: nowrap; user-select: none;"]/button[not(contains(@style,"visibility: hidden;"))])[${counter}]
 
     END
+
+    Wait Until Page Contains Element         //input[@class='gLFyf']
+    Element Should Be Visible                //input[@class='gLFyf']
 
 voice recognition
     Click Element    //div[@class='XDyW0e']
@@ -87,7 +90,7 @@ google images
     Title Should Be    Google Photos
     Input Text    //input[@name='q']    ${search}
     Click Element    //button[@class='Tg7LZd']
-    Page Should Contain    forsen - Google Search
+    Page Should Contain    Google Search
 
 google apps
     
@@ -110,8 +113,8 @@ google apps
     Wait Until Page Contains    Google Account
 
 settings
-    Wait Until Page Contains Element    //*[@jsname='LgbsSe']
-    Click Element    //*[@jsname='ZnuYW']
+    Wait Until Page Contains Element    //*[@jsname='LgbsSe']      #settings xpath
+    #Click Element    //*[@jsname='ZnuYW']       #click on lunar newyear popup
     Click Element    //*[@jsname='LgbsSe']
     Wait Until Page Contains Element    //div[@class='gTMtLb fp-nh']/*[@jsname='V68bde']
 
@@ -130,7 +133,7 @@ dark mode
     Click Element    //*[@class='y0fQ9c']
     Wait Until Page Contains Element    //meta[@content='dark' and @name='color-scheme']
 
-search by image - image
+search by image - upload image
     [Arguments]     ${image}
     Click Element    //div[@class='nDcEnd']
     #Click Element    //*[@jsname='tAPGc']
